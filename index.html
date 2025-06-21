@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <title>MathLMS</title>
+  </head>
+  <body>
+    <!-- navigation bar -->
+    <nav class="margin">
+      <div class="left">
+        <img src="./assets/logo.png" alt="logo" />
+        <h3>MathLMS</h3>
+      </div>
+      <div class="right">
+        <a href="./pages/about.html">About</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <button class="yellow-btn logInBtn">
+        <a href="#">Log In</a>
+      </button>
+      <i class="ri-menu-line hamburger"></i>
+    </nav>
+    <div class="mobile-nav"></div>
+    <!-- hero section -->
+    <main class="hero">
+      <div class="left">
+        <h1>Mathematics LMS for students</h1>
+        <p>
+          Built just for our students at [School Name], this math platform makes
+          learning numbers fun, easy, and exciting—right from your classroom or
+          home.
+        </p>
+        <button class="yellow-btn">Log in as a student ></button>
+      </div>
+      <div class="right">
+        <div class="top">
+          <div class="card">
+            <img src="./assets/maths-symbols.png" alt="maths symbols" />
+            <p>Generate Multiplication Tables</p>
+          </div>
+          <div class="card">
+            <img src="./assets/math-board.png" alt="maths symbols" />
+            <p>Take Multiplication Quizzes</p>
+          </div>
+        </div>
+        <div class="bottom">
+          <div class="card">
+            <img src="./assets/ai.png" alt="maths symbols" />
+            <p>Artificial Intelligence Integration (SOON)</p>
+          </div>
+        </div>
+      </div>
+      <!-- log in modal -->
+      <div class="dark-bg">
+        <div class="login-modal">
+          <i class="ri-close-large-line close"></i>
+          <form>
+            <label for="index_number">
+              Index Number
+              <input type="text" placeholder="eg. 10245698" />
+            </label>
+            <label for="index_number">
+              Password
+              <input type="password" />
+            </label>
+            <button class="yellow-btn">Student Login</button>
+            <p>forgot password?</p>
+            <p class="or">OR</p>
+            <button class="blue-btn">Log in as a teacher</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/about.css" />
+    <title>About Us - [School Name]</title>
+  </head>
+  <body>
+    <nav class="margin">
+      <div class="left">
+        <img src="../assets/logo.png" alt="logo" />
+        <h3>MathLMS</h3>
+      </div>
+      <div class="right">
+        <a href="./pages/about.html">About</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <button class="yellow-btn logInBtn">
+        <a href="#">Log In</a>
+      </button>
+      <i class="ri-menu-line hamburger"></i>
+    </nav>
+
+    <main class="margin">
+      <div class="about-text">
+        <h1>About [School Name]</h1>
+      </div>
+      <div class="about-image">
+        <div class="left">
+          <img src="../assets/crest.png" alt="" />
+        </div>
+        <div class="right">
+          <p>
+            Welcome to [School Name], a vibrant and nurturing primary school
+            where young minds grow, explore, and thrive. Our dedicated team of
+            experienced and passionate teachers is committed to providing a
+            strong academic foundation while fostering creativity, curiosity,
+            and confidence in every child. At [School Name], we believe in
+            creating a safe, supportive, and engaging environment where learning
+            is fun and every student is encouraged to reach their full
+            potential.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- log in modal -->
+    <div class="dark-bg">
+      <div class="login-modal">
+        <i class="ri-close-large-line close"></i>
+        <div class="left">
+          <img src="./assets/login-picture.png" alt="" />
+        </div>
+        <form>
+          <label for="index_number">
+            Index Number
+            <input type="text" placeholder="eg. 10245698" />
+          </label>
+          <label for="index_number">
+            Password
+            <input type="password" />
+          </label>
+          <button class="yellow-btn">Student Login</button>
+          <p>forgot password?</p>
+          <p class="or">OR</p>
+          <button class="blue-btn">Log in as a teacher</button>
+        </form>
+      </div>
+    </div>
+    <script src="../scripts/script.js"></script>
+  </body>
+</html>

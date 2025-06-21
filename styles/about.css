@@ -1,0 +1,39 @@
+@import url("./styles.css");
+ 
+body {
+    background-color: var(--lightblue);
+    background-image: url("../assets/bg.png");
+}
+
+.about-text h1 {
+    text-align: center;
+    margin-top: 2.5em;
+    color: var(--yellow)
+}
+
+.about-image {
+    display: flex;
+    align-items: center;
+}
+
+.about-image .right {
+    padding: 2rem;
+    background-color: white;
+    border-radius: 16px;
+}
+
+.about-image .right p {
+    font-size: 1.325rem;
+}
+
+@media screen and (max-width: 1250px) {
+    .about-image {
+        flex-direction: column;
+    }
+    .about-image .right p {
+        font-size: 1.1rem;
+    }
+    .about-image .right {
+        margin-inline: 0.825rem;
+    }
+}
