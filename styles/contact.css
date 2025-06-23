@@ -1,1 +1,50 @@
 @import url("./styles.css");
+
+section {
+    display: flex;
+    justify-content: center;
+    margin-block: 1.5rem;
+}
+
+form {
+    background-color: white;
+    display:inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.325rem;
+    padding-block: 1.5rem;
+    padding: 4rem;
+    margin: 0 auto;
+    border-radius: 1.325rem;
+}
+
+form .input {
+    display: flex;
+    flex-direction: column;
+    gap: 1.325rem;
+}
+
+form .input label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+form .input label span {
+    font-size: 1.2rem;
+}
+
+form .input label input, textarea {
+    padding: 0.3rem 1rem;
+    font-size: 1.1rem;
+    resize: none;
+}
+
+form .input label textarea {
+    height: 225px;
+    width: 325px;
+}
+
+form .input label input:focus {
+        outline: 2px solid var(--lightblue);
+}
