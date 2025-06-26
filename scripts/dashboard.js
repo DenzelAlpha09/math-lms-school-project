@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const targetId = link.getAttribute("data-target");
       const targetSection = document.getElementById(targetId);
       if (targetSection) {
-        targetSection.style.display = "block";
+        targetSection.style.display = "flex";
       } else {
         console.error(`Target section with ID ${targetId} not found`);
       }
@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (quizBtn && quizSection && digitEntry) {
     quizBtn.addEventListener("click", () => {
       digitEntry.style.display = "none"; // Hide multiplication table
-      quizSection.style.display = "flex"; // Show quiz section instead
+      quizSection.style.display = "flex"; // Show quiz section
       currentQuestion = 0;
       score = 0;
       usedMultipliers = []; // Reset used multipliers
@@ -210,6 +210,17 @@ document.addEventListener("DOMContentLoaded", () => {
     viewHistoryBtn.addEventListener("click", () => {
       exerciseHistory.style.display =
         exerciseHistory.style.display === "none" ? "flex" : "none";
+    });
+  }
+
+  // View Full Leaderboard Button
+  const viewLeaderboardBtn = document.getElementById("view-leaderboard");
+  const leaderboardTable = document.querySelector(".leaderboard-table");
+
+  if (viewLeaderboardBtn && leaderboardTable) {
+    viewLeaderboardBtn.addEventListener("click", () => {
+      leaderboardTable.style.display =
+        leaderboardTable.style.display === "none" ? "flex" : "none";
     });
   }
 

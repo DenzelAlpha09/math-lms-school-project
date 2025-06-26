@@ -72,124 +72,121 @@
         </form>
       </div>
       <!-- Dashboard Section -->
-      <div class="container content-section" id="dashboard">
-        <section>
-          <div class="nav">
-            <p class="greeting">
-              Good Afternoon, <span class="bold">Gadafi</span>
+      <section class="container content-section" id="dashboard">
+        <div class="nav">
+          <p class="greeting">
+            Good Afternoon, <span class="bold">Gadafi</span>
+          </p>
+          <div class="side">
+            <p>Start Learning</p>
+            <a href="#" style="text-decoration: none; color: black"
+              ><i class="ri-account-circle-line" style="font-size: 1.5rem"></i
+            ></a>
+            <button class="log-out">
+              <a
+                href="../index.html"
+                style="text-decoration: none; color: white"
+                >Log Out</a
+              >
+            </button>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="stat-cards">
+            <div class="card">
+              <i class="ri-a-b"></i>
+              <p class="bold big">078</p>
+              <p class="info">Total Tests Taken</p>
+            </div>
+            <div class="card">
+              <i class="ri-book-open-line"></i>
+              <p class="bold big">028</p>
+              <p class="info">Total tests passed</p>
+            </div>
+            <div class="card">
+              <i class="ri-trophy-line"></i>
+              <p class="bold big">13th</p>
+              <p class="info">Current Class Ranking</p>
+            </div>
+          </div>
+          <div class="last-work">
+            <p class="bold">Last Test Taken</p>
+            <div class="info">
+              <p>score: <span class="blue">09</span> out of 10</p>
+              <p>Type: <span class="blue">Multiplication Drill</span></p>
+              <p>Evaluation: <span class="yellow">Pass!</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="progress-tracker">
+          <p class="bold">Level <span class="yellow">13</span></p>
+          <div
+            class="progress-bar"
+            role="progressbar"
+            aria-valuenow="65"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            <div class="progress-fill" style="width: 65%"></div>
+          </div>
+          <p class="info">
+            65% complete - Do more quizzes and learn to level up
+          </p>
+        </div>
+        <div class="extras">
+          <div class="daily-quiz">
+            <p class="bold">Daily Multiplication Quiz</p>
+            <p class="question" id="daily-quiz-question">
+              What is <span class="val1">0</span> × <span class="val2">0</span>?
             </p>
-            <div class="side">
-              <p>Start Learning</p>
-              <a href="#" style="text-decoration: none; color: black"
-                ><i class="ri-account-circle-line" style="font-size: 1.5rem"></i
-              ></a>
-              <button class="log-out">
-                <a
-                  href="../index.html"
-                  style="text-decoration: none; color: white"
-                  >Log Out</a
-                >
-              </button>
-            </div>
+            <input
+              class="take-value"
+              type="number"
+              id="user-answer"
+              placeholder="Your answer..."
+            />
+            <button id="submit-answer" class="yellow-btn">Submit</button>
+            <p id="daily-quiz-feedback" class="feedback"></p>
           </div>
-          <div class="cards">
-            <div class="stat-cards">
-              <div class="card">
-                <i class="ri-a-b"></i>
-                <p class="bold big">078</p>
-                <p class="info">Total Tests Taken</p>
-              </div>
-              <div class="card">
-                <i class="ri-book-open-line"></i>
-                <p class="bold big">028</p>
-                <p class="info">Total tests passed</p>
-              </div>
-              <div class="card">
-                <i class="ri-trophy-line"></i>
-                <p class="bold big">13th</p>
-                <p class="info">Current Class Ranking</p>
-              </div>
-            </div>
-            <div class="last-work">
-              <p class="bold">Last Test Taken</p>
-              <div class="info">
-                <p>score: <span class="blue">09</span> out of 10</p>
-                <p>Type: <span class="blue">Multiplication Drill</span></p>
-                <p>Evaluation: <span class="yellow">Pass!</span></p>
-              </div>
-            </div>
-          </div>
-          <div class="progress-tracker">
-            <p class="bold">Level <span class="yellow">13</span></p>
-            <div
-              class="progress-bar"
-              role="progressbar"
-              aria-valuenow="65"
-              aria-valuemin="0"
-              aria-valuemax="100"
-            >
-              <div class="progress-fill" style="width: 65%"></div>
-            </div>
-            <p class="info">
-              65% complete - Do more quizzes and learn to level up
-            </p>
-          </div>
-          <div class="extras">
-            <div class="daily-quiz">
-              <p class="bold">Daily Multiplication Quiz</p>
-              <p class="question" id="daily-quiz-question">
-                What is <span class="val1">0</span> ×
-                <span class="val2">0</span>?
-              </p>
-              <input
-                class="take-value"
-                type="number"
-                id="user-answer"
-                placeholder="Your answer..."
-              />
-              <button id="submit-answer" class="yellow-btn">Submit</button>
-              <p id="daily-quiz-feedback" class="feedback"></p>
-            </div>
-            <div class="streak-card">
-              <div class="streak-icon">🔥</div>
-              <div class="streak-text">
-                <p class="bold">3-Day Streak</p>
-                <p class="info">
-                  Keep it up! Come back daily to keep your streak alive.
-                </p>
-              </div>
-            </div>
-            <div class="motivation-card">
-              <div class="motivation-header">
-                <i class="ri-chat-heart-line"></i>
-                <p class="bold">Today's Motivation</p>
-              </div>
-              <p class="quote">
-                “Every mistake you make is progress. Keep going, you’re doing
-                amazing! 💪”
-              </p>
-            </div>
-          </div>
-          <div class="more">
-            <div class="spin-wheel-card">
-              <div class="wheel-icon">🎡</div>
-              <div class="wheel-content">
-                <p class="bold">Spin the Wheel!</p>
-                <p class="info">Try your luck and win XP or a badge.</p>
-                <button class="spin-btn">Spin Now</button>
-              </div>
-            </div>
-            <div class="battle-mode-card">
-              <div class="coming-soon-badge">Coming Soon</div>
-              <p class="bold">⚔️ Math Battle Queensland: Math Battle Mode</p>
+          <div class="streak-card">
+            <div class="streak-icon">🔥</div>
+            <div class="streak-text">
+              <p class="bold">3-Day Streak</p>
               <p class="info">
-                Challenge friends in live math duels and earn points. Prepare to
-                compete!
+                Keep it up! Come back daily to keep your streak alive.
               </p>
             </div>
           </div>
-        </section>
-      </div>
+          <div class="motivation-card">
+            <div class="motivation-header">
+              <i class="ri-chat-heart-line"></i>
+              <p class="bold">Today's Motivation</p>
+            </div>
+            <p class="quote">
+              “Every mistake you make is progress. Keep going, you’re doing
+              amazing! 💪”
+            </p>
+          </div>
+        </div>
+        <div class="more">
+          <div class="spin-wheel-card">
+            <div class="wheel-icon">🎡</div>
+            <div class="wheel-content">
+              <p class="bold">Spin the Wheel!</p>
+              <p class="info">Try your luck and win XP or a badge.</p>
+              <button class="spin-btn">Spin Now</button>
+            </div>
+          </div>
+          <div class="battle-mode-card">
+            <div class="coming-soon-badge">Coming Soon</div>
+            <p class="bold">⚔️ Math Battle Queensland: Math Battle Mode</p>
+            <p class="info">
+              Challenge friends in live math duels and earn points. Prepare to
+              compete!
+            </p>
+          </div>
+        </div>
+      </section>
       <!-- Learn Section -->
       <div class="learn content-section" id="learn">
         <div class="digit-entry">
@@ -276,7 +273,48 @@
             <p class="bold">Your Rank: 13th</p>
             <p>Top Performer: Adebayo Femi (1st)</p>
             <p>Total Points: 450</p>
-            <button class="yellow-btn">View Full Leaderboard</button>
+            <button class="yellow-btn" id="view-leaderboard">
+              View Full Leaderboard
+            </button>
+          </div>
+          <div class="leaderboard-table" style="display: none">
+            <h3>Leaderboard</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Name</th>
+                  <th>Points</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="bold">1st</td>
+                  <td>Adebayo Femi</td>
+                  <td class="blue">500</td>
+                </tr>
+                <tr>
+                  <td class="bold">2nd</td>
+                  <td>Jane Doe</td>
+                  <td class="blue">480</td>
+                </tr>
+                <tr>
+                  <td class="bold">3rd</td>
+                  <td>John Smith</td>
+                  <td class="blue">470</td>
+                </tr>
+                <tr>
+                  <td class="bold">4th</td>
+                  <td>Emily Chen</td>
+                  <td class="blue">460</td>
+                </tr>
+                <tr>
+                  <td class="bold">13th</td>
+                  <td>Gadafi</td>
+                  <td class="blue">450</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </section>
       </div>
