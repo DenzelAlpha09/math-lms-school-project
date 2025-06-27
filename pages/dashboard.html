@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -14,52 +14,47 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../styles/dashboard.css" />
-    <title>MathLMS</title>
+    <title>🌟 MathLMS - Learn & Have Fun!</title>
   </head>
   <body>
     <main>
       <div class="sidebar">
         <div class="top">
-          <h1>Learn.</h1>
+          <h1 class="fun-font">Learn. ✨</h1>
           <div class="pages">
-            <span class="link" data-target="dashboard">
+            <span class="link link-active" data-target="dashboard">
               <i class="ri-dashboard-line"></i>
-              <a href="#">Dashboard</a>
+              <span>Dashboard</span>
             </span>
-            <span class="link link-active" data-target="learn">
+            <span class="link" data-target="learn">
               <i class="ri-book-2-line"></i>
-              <a href="#">Learn</a>
+              <span>Learn</span>
             </span>
             <span class="link" data-target="my-class">
               <i class="ri-home-heart-line"></i>
-              <a href="#">My Class</a>
+              <span>My Class</span>
             </span>
             <span class="link" data-target="rankings">
               <i class="ri-sort-asc"></i>
-              <a href="#">Rankings</a>
+              <span>Rankings</span>
             </span>
           </div>
         </div>
         <div class="bottom">
-          <span class="report-icon">
-            <i
-              class="ri-alarm-warning-line middle"
-              style="color: red; font-size: 2rem"
-            ></i>
-          </span>
+          <div class="report-icon">
+            <i class="ri-alarm-warning-line"></i>
+          </div>
           <div class="report">
-            <p>Have a problem? Let us know</p>
+            <p class="fun-font">Have a problem? Let us know! 🤔</p>
             <button class="red-btn open-report">Report a problem</button>
           </div>
         </div>
       </div>
+
       <!-- Report Issue Modal -->
       <div class="report-issue" id="report-issue">
         <form action="https://formspree.io/f/xeokpkjl" method="post">
-          <i
-            class="ri-close-large-line close-btn"
-            style="width: 100%; text-align: right; cursor: pointer"
-          ></i>
+          <i class="ri-close-large-line close-btn"></i>
           <label for="email">
             Enter email/student address
             <input type="email" name="email" required />
@@ -71,6 +66,7 @@
           <button class="red-btn report-btn">Report</button>
         </form>
       </div>
+
       <!-- Dashboard Section -->
       <section class="container content-section" id="dashboard">
         <div class="nav">
@@ -79,9 +75,9 @@
           </p>
           <div class="side">
             <p>Start Learning</p>
-            <a href="#" style="text-decoration: none; color: black"
-              ><i class="ri-account-circle-line" style="font-size: 1.5rem"></i
-            ></a>
+            <a href="#" style="text-decoration: none; color: black">
+              <i class="ri-account-circle-line" style="font-size: 1.5rem"></i>
+            </a>
             <button class="log-out">
               <a
                 href="../index.html"
@@ -135,7 +131,7 @@
         </div>
         <div class="extras">
           <div class="daily-quiz">
-            <p class="bold">Daily Multiplication Quiz</p>
+            <p class="bold fun-font">Daily Multiplication Quiz</p>
             <p class="question" id="daily-quiz-question">
               What is <span class="val1">0</span> × <span class="val2">0</span>?
             </p>
@@ -151,7 +147,7 @@
           <div class="streak-card">
             <div class="streak-icon">🔥</div>
             <div class="streak-text">
-              <p class="bold">3-Day Streak</p>
+              <p class="bold fun-font">3-Day Streak</p>
               <p class="info">
                 Keep it up! Come back daily to keep your streak alive.
               </p>
@@ -160,7 +156,7 @@
           <div class="motivation-card">
             <div class="motivation-header">
               <i class="ri-chat-heart-line"></i>
-              <p class="bold">Today's Motivation</p>
+              <p class="bold fun-font">Today's Motivation</p>
             </div>
             <p class="quote">
               “Every mistake you make is progress. Keep going, you’re doing
@@ -172,14 +168,16 @@
           <div class="spin-wheel-card">
             <div class="wheel-icon">🎡</div>
             <div class="wheel-content">
-              <p class="bold">Spin the Wheel!</p>
+              <p class="bold fun-font">Spin the Wheel!</p>
               <p class="info">Try your luck and win XP or a badge.</p>
               <button class="spin-btn">Spin Now</button>
             </div>
           </div>
           <div class="battle-mode-card">
             <div class="coming-soon-badge">Coming Soon</div>
-            <p class="bold">⚔️ Math Battle Queensland: Math Battle Mode</p>
+            <p class="bold fun-font">
+              ⚔️ Math Battle Queensland: Math Battle Mode
+            </p>
             <p class="info">
               Challenge friends in live math duels and earn points. Prepare to
               compete!
@@ -187,10 +185,11 @@
           </div>
         </div>
       </section>
+
       <!-- Learn Section -->
-      <div class="learn content-section" id="learn">
+      <div class="learn content-section active" id="learn">
         <div class="digit-entry">
-          <h3>
+          <h3 class="fun-font">
             Enter a Number from <span class="yellow">1</span> to
             <span class="yellow">12</span>
           </h3>
@@ -208,7 +207,7 @@
           <div class="generate-table"></div>
         </div>
         <div class="quiz-section" style="display: none">
-          <h3>Multiplication Quiz</h3>
+          <h3 class="fun-font">Multiplication Quiz</h3>
           <p class="question" id="learn-quiz-question">
             What is <span class="quiz-num">0</span> ×
             <span class="quiz-multiplier">0</span>?
@@ -230,10 +229,11 @@
           </button>
         </div>
       </div>
+
       <!-- My Class Section -->
       <div class="my-class content-section" id="my-class" style="display: none">
         <section>
-          <h2>My Class</h2>
+          <h2 class="fun-font">My Class</h2>
           <p class="info">View your class details and exercise history.</p>
           <div class="card">
             <p class="bold">Class Name: Math 101</p>
@@ -242,7 +242,7 @@
             <button class="blue-bg" id="view-history">View My History</button>
           </div>
           <div class="exercise-history" style="display: none">
-            <h3>Exercise History</h3>
+            <h3 class="fun-font">Exercise History</h3>
             <div class="exercise-card">
               <p class="bold">Multiplication Drill (5)</p>
               <p>Score: <span class="blue">8/10</span></p>
@@ -264,10 +264,11 @@
           </div>
         </section>
       </div>
+
       <!-- Rankings Section -->
       <div class="rankings content-section" id="rankings" style="display: none">
         <section>
-          <h2>Rankings</h2>
+          <h2 class="fun-font">Rankings</h2>
           <p class="info">Check your ranking among your peers.</p>
           <div class="card">
             <p class="bold">Your Rank: 13th</p>
@@ -278,7 +279,7 @@
             </button>
           </div>
           <div class="leaderboard-table" style="display: none">
-            <h3>Leaderboard</h3>
+            <h3 class="fun-font">Leaderboard</h3>
             <table>
               <thead>
                 <tr>
@@ -295,7 +296,7 @@
                 </tr>
                 <tr>
                   <td class="bold">2nd</td>
-                  <td>Jane Doe</td>
+                  <td>Ernest Akumfi</td>
                   <td class="blue">480</td>
                 </tr>
                 <tr>
@@ -305,12 +306,12 @@
                 </tr>
                 <tr>
                   <td class="bold">4th</td>
-                  <td>Emily Chen</td>
+                  <td>Yusra Sattar</td>
                   <td class="blue">460</td>
                 </tr>
                 <tr>
                   <td class="bold">13th</td>
-                  <td>Gadafi</td>
+                  <td>Denzel Ashitey</td>
                   <td class="blue">450</td>
                 </tr>
               </tbody>

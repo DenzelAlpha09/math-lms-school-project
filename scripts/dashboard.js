@@ -6,14 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
   links.forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
-      // Remove active state from all links
       links.forEach((l) => l.classList.remove("link-active"));
       link.classList.add("link-active");
-
-      // Hide all content sections
       contentSections.forEach((section) => (section.style.display = "none"));
-
-      // Show the selected section
       const targetId = link.getAttribute("data-target");
       const targetSection = document.getElementById(targetId);
       if (targetSection) {
@@ -24,9 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Initial view: show Learn section only
+  // show main dashboard on first load
   contentSections.forEach((section) => (section.style.display = "none"));
-  document.getElementById("learn").style.display = "block";
+  document.getElementById("dashboard").style.display = "flex";
 
   // Daily Quiz Logic
   const fValue = document.querySelector(".val1");
@@ -46,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
     submit.addEventListener("click", () => {
       const answer = Number(userAnswer.value);
       const correct = Number(fValue.textContent) * Number(sValue.textContent);
-
       if (answer === correct) {
         feedback.textContent = "Correct! Here's a new one.";
         feedback.style.color = "green";
@@ -55,10 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
         feedback.textContent = "Incorrect. Try again!";
         feedback.style.color = "crimson";
       }
-
       userAnswer.value = "";
     });
-
     generateRandomValues();
   }
 
@@ -79,7 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
         errorMessage.textContent = "";
         tableContainer.innerHTML = "";
         selectedNumber = number;
-
         for (let i = 1; i <= 10; i++) {
           const result = number * i;
           const row = document.createElement("div");
@@ -87,7 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
           row.innerHTML = `<span class="bold">${number}</span> x <span>${i}</span> = <span class="yellow-bg">${result}</span>`;
           tableContainer.appendChild(row);
         }
-
         quizBtn.style.display = "block";
         input.value = "";
       } else {
@@ -110,11 +100,10 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentQuestion = 0;
   let score = 0;
   const totalQuestions = 5;
-  let usedMultipliers = []; // Track used multipliers
-  let answerSubmitted = false; // Track if an answer was submitted
+  let usedMultipliers = [];
+  let answerSubmitted = false;
 
   function generateQuestion() {
-    // Ensure unique multipliers
     let multiplier;
     do {
       multiplier = Math.floor(Math.random() * 10) + 1;
@@ -122,11 +111,9 @@ document.addEventListener("DOMContentLoaded", () => {
       usedMultipliers.includes(multiplier) &&
       usedMultipliers.length < 10
     );
-
     if (usedMultipliers.length >= 10) {
       usedMultipliers = [];
     }
-
     usedMultipliers.push(multiplier);
     quizNum.textContent = selectedNumber;
     quizMultiplier.textContent = multiplier;
@@ -137,39 +124,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (quizBtn && quizSection && digitEntry) {
     quizBtn.addEventListener("click", () => {
-      digitEntry.style.display = "none"; // Hide multiplication table
-      quizSection.style.display = "flex"; // Show quiz section
+      // Hide digit-entry and show quiz-section to replace the table
+      digitEntry.style.display = "none";
+      quizSection.style.display = "flex";
+      quizSection.style.cssText =
+        "display: flex; flex-direction: column; gap: 1.5rem;"; // Ensure consistent layout
+      quizSection.classList.add("active");
+      digitEntry.classList.remove("active");
       currentQuestion = 0;
       score = 0;
-      usedMultipliers = []; // Reset used multipliers
+      usedMultipliers = [];
       quizScore.textContent = "0";
       submitQuiz.style.display = "block";
       nextQuestion.style.display = "none";
       restartQuiz.style.display = "none";
+      quizAnswer.style.cssText = ""; // Reset input styles
       generateQuestion();
     });
   }
 
   if (submitQuiz && quizAnswer && quizFeedback && quizScore) {
     submitQuiz.addEventListener("click", () => {
-      if (answerSubmitted) return; // Prevent multiple submissions
-
+      if (answerSubmitted) return;
       const answer = Number(quizAnswer.value);
       const correct = selectedNumber * Number(quizMultiplier.textContent);
-
       if (answer === correct) {
         quizFeedback.textContent = "Correct!";
-        quizFeedback.style.color = "green";
+        quizFeedback.classList.add("correct");
+        quizFeedback.classList.remove("incorrect");
         score++;
         quizScore.textContent = score;
       } else {
         quizFeedback.textContent = `Incorrect! Answer: ${correct}`;
-        quizFeedback.style.color = "crimson";
+        quizFeedback.classList.add("incorrect");
+        quizFeedback.classList.remove("correct");
       }
-
-      answerSubmitted = true; // Mark answer as submitted
+      answerSubmitted = true;
       currentQuestion++;
-
       if (currentQuestion < totalQuestions) {
         nextQuestion.style.display = "block";
         submitQuiz.style.display = "none";
@@ -177,28 +168,36 @@ document.addEventListener("DOMContentLoaded", () => {
         quizFeedback.textContent += ` Quiz complete! Score: ${score}/${totalQuestions}`;
         restartQuiz.style.display = "block";
         submitQuiz.style.display = "none";
-        usedMultipliers = []; // Reset for next quiz
+        usedMultipliers = [];
       }
     });
   }
 
   if (nextQuestion) {
     nextQuestion.addEventListener("click", () => {
-      if (!answerSubmitted) return; // Prevent skipping without answering
+      if (!answerSubmitted) return;
       generateQuestion();
       submitQuiz.style.display = "block";
       nextQuestion.style.display = "none";
     });
   }
 
-  if (restartQuiz && digitEntry) {
+  if (restartQuiz && digitEntry && quizSection) {
     restartQuiz.addEventListener("click", () => {
       quizSection.style.display = "none";
-      digitEntry.style.display = "block"; // Show multiplication table section again
+      digitEntry.style.display = "flex";
       quizScore.textContent = "0";
       currentQuestion = 0;
       score = 0;
-      usedMultipliers = []; // Reset used multipliers
+      usedMultipliers = [];
+      quizSection.style.cssText =
+        "display: none; flex-direction: column; gap: 1.5rem;"; // Reset quiz section styles
+      quizAnswer.style.cssText = ""; // Clear inline input styles
+      submitQuiz.style.cssText = ""; // Clear inline button styles
+      nextQuestion.style.cssText = "display: none;"; // Ensure next button is hidden
+      restartQuiz.style.cssText = "display: none;"; // Ensure restart button is hidden
+      quizSection.classList.remove("active");
+      digitEntry.classList.add("active");
     });
   }
 
