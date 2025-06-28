@@ -5,11 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   links.forEach((link) => {
     link.addEventListener("click", (e) => {
-      e.preventDefault();
+      e.preventDefault(); //prevent the submit default
       links.forEach((l) => l.classList.remove("link-active"));
       link.classList.add("link-active");
       contentSections.forEach((section) => (section.style.display = "none"));
-      const targetId = link.getAttribute("data-target");
+      const targetId = link.getAttribute("data-target"); //get the attribute called data-target
       const targetSection = document.getElementById(targetId);
       if (targetSection) {
         targetSection.style.display = "flex";
@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const userAnswer = document.getElementById("user-answer");
   const feedback = document.getElementById("daily-quiz-feedback");
 
+  // generate random values for multiplication
   function generateRandomValues() {
     if (fValue && sValue) {
       fValue.textContent = Math.floor(Math.random() * 13);
@@ -62,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const errorMessage = document.getElementById("error-message");
   const digitEntry = document.querySelector(".digit-entry");
 
-  let selectedNumber = null;
+  let selectedNumber = null; //set the initial value to null so it can be assigned in the statement
 
   if (generateBtn && quizBtn && tableContainer && input && errorMessage) {
     generateBtn.addEventListener("click", () => {
@@ -124,11 +125,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (quizBtn && quizSection && digitEntry) {
     quizBtn.addEventListener("click", () => {
-      // Hide digit-entry and show quiz-section to replace the table
+      // Hide digit-entry and show quiz-section to replace the table so it feels like react
       digitEntry.style.display = "none";
       quizSection.style.display = "flex";
       quizSection.style.cssText =
-        "display: flex; flex-direction: column; gap: 1.5rem;"; // Ensure consistent layout
+        "display: flex; flex-direction: column; gap: 1.5rem;"; // Ensure consistent layout (beautyy)
       quizSection.classList.add("active");
       digitEntry.classList.remove("active");
       currentQuestion = 0;
@@ -192,8 +193,8 @@ document.addEventListener("DOMContentLoaded", () => {
       usedMultipliers = [];
       quizSection.style.cssText =
         "display: none; flex-direction: column; gap: 1.5rem;"; // Reset quiz section styles
-      quizAnswer.style.cssText = ""; // Clear inline input styles
-      submitQuiz.style.cssText = ""; // Clear inline button styles
+      quizAnswer.style.cssText = "";
+      submitQuiz.style.cssText = "";
       nextQuestion.style.cssText = "display: none;"; // Ensure next button is hidden
       restartQuiz.style.cssText = "display: none;"; // Ensure restart button is hidden
       quizSection.classList.remove("active");
